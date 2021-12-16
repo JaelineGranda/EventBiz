@@ -18,7 +18,10 @@
     p:url="${jdbc.url}"
     p:username="${jdbc.username}"
     p:password="${jdbc.password}" /-->
-
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-
+    <bean id="user" class="com.me.pojo.User" scope="session" />
+    <bean id="event" class="com.me.pojo.Event" scope="request" />
+    <bean id="booking" class="com.me.pojo.Booking" scope="request" />
+    <bean name="uvalidator" class="com.me.validation.UserValidator" />
+    <bean name="evalidator" class="com.me.validation.EventValidator" />
 </beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.me.pojo.Event" table="events">
+        <id name="eventid" column="eventid" type="long">
+            <generator class="native" />
+        </id>
+        <property name="eventname" column="eventname" type="string" />
+        <property name="region" column="region" type="string" />
+        <property name="street" column="street" type="string" />
+        <property name="city" column="city" type="string" />
+        <property name="state" column="state" type="string" />
+        <property name="zipcode" column="zipcode" type="long" />
+        <property name="eventdate" column="eventdate" type="date" />
+        <property name="type" column="type" type="string" />
+        <property name="price" column="price" type="float"/>
+        <property name="creatorid" column="creatorid" type="long"/>
+    </class>
+</hibernate-mapping>

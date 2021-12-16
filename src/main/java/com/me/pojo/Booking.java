@@ -5,6 +5,7 @@
 package com.me.pojo;
 
 import java.io.Serializable;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,52 +19,45 @@ import javax.validation.constraints.NotNull;
  * @author Jaeline
  */
 @Entity
-@Table(name = "usertable")
-public class User implements Serializable {
-
-    public User() {
-    }
+@Table(name = "bookings")
+public class Booking implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userid")
+    @Column(name = "bookingid")
     @NotNull
-    private long userid;
-    @Column(name = "username")
-    private String username;
-    @Column(name = "password")
-    private String password;
+    private long bookingid;
+    @Column(name = "customerid")
+    private long customerid;
     @Column(name = "firstname")
     private String firstname;
     @Column(name = "lastname")
     private String lastname;
     @Column(name = "email")
     private String email;
-    @Column(name = "`role`")
-    private String role;
+    @Column(name = "eventid")
+    private long eventid;
+    @Column(name = "amount")
+    private Float amount;
+    @Column(name = "tickets")
+    private long tickets;
+    @Column(name = "date")
+    private String date;
 
-    public long getUserid() {
-        return userid;
+    public long getBookingid() {
+        return bookingid;
     }
 
-    public void setUserid(long userid) {
-        this.userid = userid;
+    public void setBookingid(long bookingid) {
+        this.bookingid = bookingid;
     }
 
-    public String getUsername() {
-        return username;
+    public long getCustomerid() {
+        return customerid;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCustomerid(long customerid) {
+        this.customerid = customerid;
     }
 
     public String getFirstname() {
@@ -90,12 +84,36 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getRole() {
-        return role;
+    public long getEventid() {
+        return eventid;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setEventid(long eventid) {
+        this.eventid = eventid;
+    }
+
+    public Float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Float amount) {
+        this.amount = amount;
+    }
+
+    public long getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(long tickets) {
+        this.tickets = tickets;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
 }

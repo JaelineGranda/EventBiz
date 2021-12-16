@@ -1,0 +1,299 @@
+body {
+    margin:0;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #C8A2C8;
+    background-image:
+        linear-gradient(30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%),
+        linear-gradient(-30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%),
+        linear-gradient(30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%),
+        linear-gradient(-30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%),
+        linear-gradient(30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%),
+        linear-gradient(-30deg, #fee 13.5%, transparent 13.5%, transparent 86.5%, #fee 86.5%),
+        linear-gradient(30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%),
+        linear-gradient(-30deg, #dcc 13.5%, transparent 13.5%, transparent 86.5%, #dcc 86.5%),
+        linear-gradient(45deg, #544 25%, transparent 25%, transparent 75%, #544 75%),
+        linear-gradient(45deg, #544 25%, transparent 25%, transparent 75%, #544 75%);
+    background-position:
+        0em 2em,
+        0em 2em,
+        2em 4em,
+        2em 4em,
+        4em 2em,
+        4em 2em,
+        6em 4em,
+        6em 4em,
+        0em 0em,
+        2em 2em;
+    background-size:
+        8em 4em,
+        8em 4em,
+        8em 4em,
+        8em 4em,
+        8em 4em,
+        8em 4em,
+        8em 4em,
+        8em 4em,
+        4em 4em,
+        4em 4em;
+}
+
+
+h1 {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    background: #7C3F7C;
+    color: white;
+    font-weight: bold;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    width:100%;
+}
+
+ul.topnav li {
+    float: left;
+}
+
+ul.topnav li a {
+    font-size: 17px;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul.topnav li a:hover {
+    background-color: #C8A2C8;
+}
+
+ul.topnav li.right {
+    float: right;
+}
+
+.searchbar {
+    padding: 15px;
+    background: white;
+    font-size: 16px;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    border-radius: 25px;
+    border-color: #C8A2C8;
+    border-style: double;
+}
+
+.form {
+    padding: 20px;
+    background: white;
+    font-size: 16px;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    border-radius: 25px;
+    border-color: #C8A2C8;
+    border-style: double;
+}
+
+.index {
+    padding: 40px;
+    background: #C8A2C8;
+    font-size: 16px;
+    text-align: center;
+    width: 25%;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 5px;
+    border-color: white;
+    border-style: double;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+
+#index {
+    text-align: center;
+    font-size: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: #7C3F7C;
+}
+
+
+.start{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight: 380;
+    color:#C8A2C8;
+    text-align:center;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+a.start2{
+    display:inline-block;
+    padding:0.3em 2em;
+    border:0.16em solid black;
+    margin:0.3em 0.3em 0.3em 0.3em;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight: 50px;
+    color: black;
+    text-align:center;
+    transition: all 0.15s;
+    font-size:15px;
+}
+
+a.start{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.15s;
+}
+
+a.start:hover{
+    color:#DDDDDD;
+    border-color:#DDDDDD;
+}
+a.start:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+}
+
+img {
+    margin-top: 30px;
+    width: 250px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.grid-container {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.grid-item {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#confirm {
+    width: 400px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+}
+
+#confirmation {
+    width: 350px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+}
+
+#payment {
+    width: 400px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.recent {
+    text-align: center;
+    color: white;
+    background-color: #C8A2C8;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+    display: table;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.user {
+    text-align: center;
+    color: white;
+    background-color: #C8A2C8;
+    padding: 10px;
+    padding-left: 140px;
+    padding-right: 140px;
+    margin: 0 auto;
+    display: table;
+    border-radius: 1px;
+    font-weight: bold;
+}
+
+table{
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    width: 90%;
+    text-align: center;
+}
+
+tr:first-child td {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+tr td {
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+
+@media all and (max-width:30em){
+a.start{
+        display:block;
+        margin:0.4em auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right,
+    ul.topnav li {
+        float: none;
+    }
+}
+
+
