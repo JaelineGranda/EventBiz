@@ -60,3 +60,13 @@ User Roles and Tasks:
 - Delete existing bookings
 - Logout of session
 
+
+![Happy Christmas](Picture1.png)
+
+![Happy Christmas](Picture3.png)
+
+![Happy Christmas](Picture4.png)
+
+![Happy Christmas](Picture5.png)
+
+![Happy Christmas](Picture6.png)
