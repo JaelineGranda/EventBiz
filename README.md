@@ -1,4 +1,5 @@
 Creator: Jaeline Granda
+
 Project Name: EventBiz
 
 Summary: EventBiz aims to create a platform for people to discover new events in their area and share their own events with the public. Users can search for events, reserve/buy tickets, create new events and check their bookings history.
