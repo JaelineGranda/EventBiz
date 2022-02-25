@@ -28,6 +28,13 @@
             <li class="right"><a href="/EventBiz/index.htm">Logout</a></li>
             </ul>
         </c:if>
+        <c:if test = "${sessionScope.myUser.role == 'customer'}">
+            <ul class="topnav">
+            <li><a href="/EventBiz/welcome.htm">Search for events</a></li>
+            <li><a href="/EventBiz/mybookings.htm">My bookings</a></li>
+            <li class="right"><a href="/EventBiz/index.htm">Logout</a></li>
+            </ul>
+        </c:if>
             <br>
         <span class="recent">EVENT SUMMARY</span>
         <div class="grid-container">
@@ -45,14 +52,23 @@
         <br>
         Address: ${event.street} ${event.city}, ${event.state} ${event.zipcode}
         <br>
+        <c:if test="${sessionScope.myUser.role == 'admin'}">
         Creator id: ${event.creatorid}
+        </c:if>
         <br>
         <br>
         <c:if test="${sessionScope.myUser.role == 'admin'}">
-        <a href="/EventBiz/allbookings.htm">Go back to bookings</a>
+        <a href="/EventBiz/allbookings.htm">Go back to all bookings</a>
+        <br>
         </c:if>
         <c:if test="${sessionScope.myUser.role == 'event admin'}">
         <a href="/EventBiz/eventbookings.htm">Go back to bookings</a>
+        <br>
+        </c:if>
+        <c:if test="${sessionScope.myUser.role == 'customer'}">
+        <a href="/EventBiz/mybookings.htm">Go back to my bookings</a>
+        <br>
+        <br>
         </c:if>
         </div>
         </div>

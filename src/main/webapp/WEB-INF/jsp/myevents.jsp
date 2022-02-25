@@ -17,7 +17,7 @@
             <li class="right"><a href="/EventBiz/index.htm">Logout</a></li>
         </ul>
         <br>
-        My events
+        <span class="recent">MY EVENTS</span>
         <br>
         <c:set var="list" value="${events}"/>
 
@@ -35,6 +35,7 @@
                     <tr>
                         <td>
                             <img src="<%=request.getContextPath()%>/resources/images/${ev.imagefile}.jpg" width="10%">
+                            <br>
                             ${ev.eventname}
                         </td>
                         <td>
@@ -61,7 +62,7 @@
             </table>
         </c:if>                
         <c:if test="${list.isEmpty()}">
-            <div>No events created yet</div>
+        <span class="recent">NO EVENTS CREATED YET</span>
         </c:if>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

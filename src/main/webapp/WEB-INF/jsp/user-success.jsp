@@ -21,6 +21,7 @@
         </c:if>
         <div class="form">
         <span class="recent">USER UPDATED SUCCESSFULLY</span>
+        <br>
         <a href="/EventBiz/allusers.htm">Go back to user list</a>
         </div>
     </body>

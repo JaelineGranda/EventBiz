@@ -18,6 +18,7 @@ public class EventValidator implements Validator {
 
     private static final Pattern DATE_REGEX = Pattern.compile("\\d{2}-\\d{2}-\\d{4}");
     private static final Pattern LETTER_REGEX = Pattern.compile("^[A-Za-z]*$");
+    private static final Pattern CITY_REGEX = Pattern.compile("^[a-zA-Z ]+$");
     private static final Pattern NUM_REGEX = Pattern.compile("^[0-9]*$");
     public static final int len_zipcode = 5;
     public static final int len_state = 2;
@@ -66,7 +67,7 @@ public class EventValidator implements Validator {
             errors.rejectValue("state", "", "State can only contain letters");
         }
         
-        if (!event.getCity().isBlank() && !LETTER_REGEX.matcher(event.getCity()).matches()) {
+        if (!event.getCity().isBlank() && !CITY_REGEX.matcher(event.getCity()).matches()) {
             errors.rejectValue("city", "", "City can only contain letters");
         }
         

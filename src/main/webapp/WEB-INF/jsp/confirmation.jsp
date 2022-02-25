@@ -1,3 +1,4 @@
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,7 +24,12 @@
         <br>
         ${event.street} ${event.city}, ${event.state} ${event.zipcode}
         <br>
+        <br>
+        ${booking.tickets} ticket(s)
+        <br>
+        <c:if test="${booking.amount > 0}">
         Total Payment: $ ${booking.amount}
+        </c:if>
         </div>
         </div>
     </body>

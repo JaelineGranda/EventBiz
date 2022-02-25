@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.me.controller;
 
 import com.me.dao.BookingDAO;
@@ -106,7 +102,12 @@ public class AdminController {
  
     @RequestMapping(value = "/adduser.htm", method = RequestMethod.POST)
     public String userAdded(@SessionAttribute("myUser") User myUser, @ModelAttribute("user") User user, BindingResult result, SessionStatus status, UserDAO userdao, RedirectAttributes redirectAttributes) {   
+        User u1 = userdao.checkIfUsernameAlreadyExists(user);
+        User u2 = userdao.checkIfEmailAlreadyExists(user);
         uvalidator.validate(user, result);
+        uvalidator.validateUsername(u1, result);
+        uvalidator.validateEmail(u2, result);
+        
         redirectAttributes.addFlashAttribute("myUser", myUser);
         if (result.hasErrors()) {
             return "adduser";

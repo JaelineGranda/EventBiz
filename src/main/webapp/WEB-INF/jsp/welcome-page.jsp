@@ -32,7 +32,8 @@
         <div>Search for Events</div>
         <br>
         <form:form action="/EventBiz/events.htm" modelAttribute="event">
-            Region: <form:select path="region" required='required'>  
+            Region: <form:select path="region">  
+                <form:option value="" label="All"/>
                 <form:option value="Boston" label="Boston"/>
                 <form:option value="Chicago" label="Chicago"/>   
                 <form:option value="New York" label="New York"/>
@@ -42,7 +43,7 @@
             </form:select>
             <br>
             Type of Event <form:select path="type" >
-                <form:option value="" label="--select--"/>
+                <form:option value="" label="All"/>
                 <form:option value="Art" label="Art"/>
                 <form:option value="Sports" label="Sports"/>
                 <form:option value="Food" label="Food"/>
@@ -55,7 +56,6 @@
             <br>
             <input type="radio" id="paid" name="payment" value="paid"/> Paid
             <input type="radio" id="free" name="payment" value="free"/> Free
-            <input type="radio" id="both" name="payment" value="both"/> Both
             <br>
             <br>
             <input class="start" type="submit" value="Search"/>

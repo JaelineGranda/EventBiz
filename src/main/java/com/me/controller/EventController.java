@@ -30,25 +30,18 @@ public class EventController {
     EventValidator evalidator;
 
     @RequestMapping(value = "/events.htm")
-    public ModelAndView searchEvents(@RequestParam String eventname, @RequestParam String region, @RequestParam String type, EventDAO eventdao, HttpServletRequest request, Map<String, Object> model) {
-        if (request.getParameter("id") != null) {
-            List<Event> events = eventdao.getFreeEvents();
-            ModelAndView mv = new ModelAndView("searchresults");
-            model.put("events", events);
-            return mv;
+    public ModelAndView searchEvents(@ModelAttribute("event") Event event, @RequestParam String eventname, @RequestParam String region, @RequestParam String type, EventDAO eventdao, HttpServletRequest request, Map<String, Object> model) {
+        String payment = "";
+        if (request.getParameter("payment") != null) {
+            payment = request.getParameter("payment");
         }
-        else {
-            String payment= "";
-            if (request.getParameter("payment") != null) {
-                payment= request.getParameter("payment");
-            }
-            List<Event> events = eventdao.getAllEventsByKeyword(eventname, region, type, payment);
-            ModelAndView mv = new ModelAndView("searchresults");
-            model.put("events", events);
-            return mv;
-        }
+        List<Event> events = eventdao.getAllEventsByKeyword(eventname, region, type, payment);
+        ModelAndView mv = new ModelAndView("searchresults");
+        model.put("event", event);
+        model.put("events", events);
+        return mv;
     }
-    
+
     @RequestMapping(value = "/addevent.htm")
     public ModelAndView addEvent(@ModelAttribute("event") Event event) {
         ModelAndView mv = new ModelAndView("addevent");

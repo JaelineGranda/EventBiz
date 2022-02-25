@@ -1,4 +1,5 @@
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,6 +27,39 @@
             </ul>
         </c:if>
         <br>
+        <div class="searchbar">
+        <div>Search for Events</div>
+        <br>
+        <form:form action="/EventBiz/events.htm" modelAttribute="event">
+            Region: <form:select path="region">  
+                <form:option value="" label="All"/>
+                <form:option value="Boston" label="Boston"/>
+                <form:option value="Chicago" label="Chicago"/>   
+                <form:option value="New York" label="New York"/>
+                <form:option value="Tennessee" label="Tennessee"/>
+                <form:option value="Los Angeles" label="Los Angeles"/>
+                <form:option value="Dallas" label="Dallas"/>
+            </form:select>
+            <br>
+            Type of Event <form:select path="type" >
+                <form:option value="" label="All"/>
+                <form:option value="Art" label="Art"/>
+                <form:option value="Sports" label="Sports"/>
+                <form:option value="Food" label="Food"/>
+                <form:option value="Entertainment" label="Entertainment"/>
+                <form:option value="Education" label="Education"/>
+            </form:select>
+            <br>
+            Keyword:
+            <form:input path="eventname" />
+            <br>
+            <input type="radio" id="paid" name="payment" value="paid"/> Paid
+            <input type="radio" id="free" name="payment" value="free"/> Free
+            <br>
+            <br>
+            <input class="start" type="submit" value="Search"/>
+        </form:form>
+        </div>
         <br>
 <span class="recent">RESULTS FOR YOUR SEARCH</span>
         <br>
@@ -38,6 +72,8 @@
                 <img src="<%=request.getContextPath()%>/resources/images/${ev.imagefile}.jpg" width="10%">
                 <br>
                 ${ev.eventname}
+                <br>
+                ${ev.region}
                 <br>
                 ${ev.eventdate}
                 <br>

@@ -12,6 +12,7 @@
         <div class="form">
             <span class="user">LOGIN</span>
             <form:form modelAttribute ="user">
+                <br>
                 <form:errors path="*"/>
                 <br>
                 <br>

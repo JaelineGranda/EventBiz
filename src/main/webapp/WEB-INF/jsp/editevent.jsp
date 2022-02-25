@@ -84,7 +84,7 @@
             <input class="start" type="submit" value="Update"/>
         </form:form>
         <c:if test="${sessionScope.myUser.role == 'event admin'}">
-        <a href="/EventBiz/eventlist.htm"><button>Cancel</button></a>
+            <a href="/EventBiz/eventlist.htm">Cancel</a>
         </c:if>
         <c:if test="${sessionScope.myUser.role == 'admin'}">
             <a href="/EventBiz/allevents.htm">Cancel</a>

@@ -37,12 +37,12 @@
         <p class ="price"> Price: $${event.price} </p>
                 
         <form:form action="/EventBiz/confirmation.htm" modelAttribute ="booking">
-        Number of tickets:
         <form:hidden path="customerid" value="${sessionScope.myUser.userid}"/>
         <form:hidden path="firstname" value="${sessionScope.myUser.firstname}"/>
         <form:hidden path="lastname" value="${sessionScope.myUser.lastname}"/>
         <form:hidden path="email" value="${sessionScope.myUser.email}"/>
         <form:hidden path="eventid" value="${event.eventid}"/>
+        Number of tickets:
         <form:select path="tickets" id="numtickets" onchange="myFunc()">
             <form:option value="1" />
             <form:option value="2" />
@@ -59,11 +59,11 @@
         <div id="payment">
             Name on Card: <input type="text" name="custname" required/>
             <br>
-            Card Number:  <input type="text" name="card" placeholder="0000 0000 0000 0000" minlength="16" required/>
+            Card Number:  <input type="number" name="card" maxlength="16" placeholder="0000000000000000" required/>
             <br>
-            Expiration Date: <input type= "text" name="exp" placeholder="12/2021" minlength="7" required/>
+            Expiration Date: <input type= "text" name="exp" maxlength="5" placeholder="12/21" required/>
             <br>
-            CVV: <input type= "text" name="cvv" placeholder="000" minlrequired/>
+            CVV: <input type= "number" name="cvv" maxlength="3" placeholder="000" required/>
             <br>
             <input id="price" type="hidden" value="${event.price}"/>
             <br>
@@ -78,8 +78,12 @@
         
     <c:if test="${event.price == 0}">
         <form:form action="/EventBiz/confirmation.htm" modelAttribute ="booking">
+        <form:hidden path="customerid" value="${sessionScope.myUser.userid}"/>
+        <form:hidden path="firstname" value="${sessionScope.myUser.firstname}"/>
+        <form:hidden path="lastname" value="${sessionScope.myUser.lastname}"/>
+        <form:hidden path="email" value="${sessionScope.myUser.email}"/>
+        <form:hidden path="eventid" value="${event.eventid}"/>
         Number of tickets:
-        <br>
         <form:select path="tickets" id="numtickets" class="numtickets">
             <form:option value="1" />
             <form:option value="2" />
@@ -91,6 +95,7 @@
         <form:hidden path="amount" value="0.00"/>
         <form:hidden path="date" value="${date}"/>
         <input type="hidden" name="eventid" value="${event.eventid}">
+        <br>
         <input class="start" type="submit" value="Reserve"/>    
         </form:form>
     </c:if>

@@ -61,8 +61,14 @@ public class EventDAO extends DAO {
             CriteriaQuery<Event> query = cb.createQuery(Event.class);
             Root<Event> event = query.from(Event.class);
 
-            int counter = 1;
+            //int counter= 1;
+            int counter = 0;
             int temp = 0;
+            
+            if (!region.isEmpty()) {
+                counter++;
+            }            
+            
             if (!keyword.isEmpty()) {
                 counter++;
             }
@@ -73,26 +79,31 @@ public class EventDAO extends DAO {
                 counter++;
             }
             Predicate[] predicates = new Predicate[counter];
-            predicates[0] = cb.equal(event.get("region"), region);
+            //predicates[0] = cb.equal(event.get("region"), region);
 
-            if (!keyword.isEmpty()) {
+            if (!region.isEmpty()) {
+                predicates[temp] = cb.equal(event.get("region"), region);
                 temp++;
+            }
+            
+            if (!keyword.isEmpty()) {
                 predicates[temp] = cb.like(event.<String>get("eventname"), "%" + keyword + "%");
+                temp++;
             }
 
             if (!type.isEmpty()) {
-                temp++;
                 predicates[temp] = cb.equal(event.get("type"), type);
+                temp++;
             }
 
             if (!payment.isEmpty() &&  "free".equals(payment)) {
-                temp++;
                 Float num = 0.00f;
                 predicates[temp] = cb.equal(event.get("price").as(Float.class), num);
-            } else if (!payment.isEmpty() && "paid".equals(payment)) {
                 temp++;
+            } else if (!payment.isEmpty() && "paid".equals(payment)) {
                 Float num = 0.00f;
                 predicates[temp] = cb.greaterThan(event.get("price").as(Float.class), num);
+                temp++;
             }
 
             query.select(event).where(predicates);
@@ -182,7 +193,7 @@ public class EventDAO extends DAO {
             begin();
             List<Event> events = new ArrayList<Event>();
             getSession().clear();
-            Query q = getSession().createQuery("from Event order by eventid desc").setMaxResults(3);
+            Query q = getSession().createQuery("from Event order by eventid desc").setMaxResults(6);
             events = q.getResultList();
             commit();
             close();
